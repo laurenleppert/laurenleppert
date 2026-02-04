@@ -1,0 +1,369 @@
+/* =========================================================
+   THEME VARIABLES
+   ========================================================= */
+:root {
+  --purple: #bf00ff;           /* electric purple accent */
+  --bg-dark: #121212;          /* primary dark background */
+  --text-light: #eeeeee;       /* main light text color */
+  --text-muted: #bbbbbb;       /* secondary text (muted) */
+  --bg-secondary: #1f1f1f;     /* slightly lighter dark (cards/sections) */
+  --font-heading: 'Fredoka', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+}
+
+/* Light mode overrides (toggled on <html> via .light) */
+html.light {
+  --bg-dark: #f7f7f9;
+  --text-light: #111111;
+  --text-muted: #333333;
+  --bg-secondary: #ffffff;
+  --purple: #7a00cc;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 { margin: 0; font-family: var(--font-heading); }
+p { margin: 0 0 1em; }
+a { color: var(--purple); text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+
+/* Give anchored sections some offset for fixed nav */
+section, header { scroll-margin-top: 80px; }
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+nav {
+  position: fixed;
+  top: 0; width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+nav .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--purple);
+}
+.nav-links {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+}
+.nav-links li { margin: 0 0.5rem; }
+.nav-links a { padding: 0.25rem 0.5rem; font-weight: 500; }
+
+/* Hamburger */
+.menu-toggle {
+  background: none; border: none; cursor: pointer; display: none;
+}
+.menu-toggle .bar {
+  display: block; width: 25px; height: 3px; margin: 5px; background: var(--text-light);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  margin-left: 0.5rem;
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+header#home.hero {
+  position: relative;
+  padding: 8rem 1.5rem 6rem;
+  text-align: center;
+  background: var(--bg-dark);
+  background-image:
+    radial-gradient(at 50% 0%, rgba(191,0,255,0.25), transparent 60%),
+    radial-gradient(at 100% 100%, rgba(191,0,255,0.1), transparent 50%),
+    radial-gradient(at 0% 80%, rgba(191,0,255,0.08), transparent 40%);
+  min-height: 90vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+
+/* Logo background */
+.hero-bg-logo {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(900px, 90vw); height: min(900px, 90vw);
+  opacity: 0.12;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+.hero-bg-logo img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 60px rgba(191,0,255,0.4));
+}
+html.light .hero-bg-logo { opacity: 0.08; }
+html.light .hero-bg-logo img { filter: invert(1) drop-shadow(0 0 60px rgba(122,0,204,0.3)); }
+
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  50% { transform: translate(-50%, -48%) scale(1.02) rotate(1deg); }
+}
+
+/* Animated accent orbs */
+.hero-accents {
+  position: absolute; inset: 0;
+  pointer-events: none; overflow: hidden;
+}
+.accent {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(191,0,255,0.4), transparent 70%);
+  filter: blur(40px);
+  animation: pulse 6s ease-in-out infinite;
+}
+.accent-1 {
+  width: 300px; height: 300px;
+  top: 10%; left: 5%;
+  animation-delay: 0s;
+}
+.accent-2 {
+  width: 200px; height: 200px;
+  top: 60%; right: 10%;
+  animation-delay: 2s;
+}
+.accent-3 {
+  width: 250px; height: 250px;
+  bottom: 5%; left: 30%;
+  animation-delay: 4s;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 900px; margin: 0 auto;
+}
+header h1 {
+  font-size: 3.5rem; margin-bottom: 0.5rem;
+  text-shadow: 0 0 40px rgba(191,0,255,0.3);
+  animation: fadeInUp 0.8s ease-out;
+}
+header .tagline {
+  font-size: 1.25rem; margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+header .availability { color: var(--purple); font-weight: bold; }
+.cta-button {
+  display: inline-block; padding: 0.9rem 2rem;
+  background: var(--purple); color: #fff; font-weight: bold;
+  border: none; border-radius: 50px;
+  font-size: 1rem; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(191,0,255,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+.cta-button:hover {
+  background: #a300cc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(191,0,255,0.5);
+  text-decoration: none;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+section#about {
+  padding: 4rem 1.5rem; max-width: 1000px; margin: 0 auto;
+}
+#about h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+.about-container {
+  display: flex; flex-direction: row; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.about-text { flex: 1 1 60%; }
+.about-text p { font-size: 1rem; margin-bottom: 1.2em; }
+.about-text p:first-child { font-size: 1.1rem; }
+.about-image { flex: 1 1 35%; display: flex; justify-content: center; }
+.about-image img {
+  max-width: 250px; width: 100%; border-radius: 8px;
+  border: 2px solid var(--purple); box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+section#services { padding: 4rem 1.5rem; }
+#services h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+.services-list {
+  display: grid; gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.service {
+  background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; text-align: center;
+}
+.service-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.service-icon i { color: var(--purple); }
+.service h3 { margin-bottom: 0.5rem; font-size: 1.25rem; }
+.service p { font-size: 0.95rem; color: var(--text-muted); }
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+section#projects { padding: 4rem 1.5rem; background: var(--bg-secondary); }
+#projects h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+.projects-list { max-width: 1000px; margin: 0 auto; }
+.project { margin-bottom: 3rem; }
+.project h3 { font-size: 1.5rem; margin-bottom: 0.3rem; }
+.project h3 a { color: var(--purple); }
+.project h3 a:hover { text-decoration: underline; }
+.project-description { margin-bottom: 1rem; color: var(--text-muted); }
+.project-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--purple);
+  color: #fff;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(191,0,255,0.4);
+  text-decoration: none;
+}
+
+/* =========================================================
+   RESUME TIMELINE (NEW)
+   ========================================================= */
+#resume { padding: 4rem 1.5rem; }
+#resume h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+
+.timeline {
+  list-style: none; margin: 0 auto; padding: 0;
+  max-width: 900px; position: relative;
+}
+.timeline::before {
+  content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(180deg, rgba(191,0,255,0.9), rgba(191,0,255,0.2));
+  transform: translateX(-50%);
+}
+.timeline-item {
+  position: relative; display: flex; justify-content: flex-start;
+  margin: 0 0 2rem 0;
+}
+.timeline-item:nth-child(odd) { flex-direction: row-reverse; }
+.timeline-card {
+  background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; padding: 1.25rem; width: calc(50% - 2rem);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+.timeline-item::after {
+  content: ""; position: absolute; top: 1.2rem; left: 50%; transform: translateX(-50%);
+  width: 12px; height: 12px; border-radius: 50%; background: var(--purple);
+  box-shadow: 0 0 0 4px rgba(191,0,255,0.15);
+}
+
+/* Reveal animation */
+.reveal { opacity: 0; transform: translateY(18px) scale(0.98); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+section#contact { padding: 4rem 1.5rem; }
+#contact h2 { text-align: center; margin-bottom: 1rem; font-size: 2rem; }
+#contact p { text-align: center; max-width: 600px; margin: 0 auto 2rem auto; font-size: 1rem; color: var(--text-light); }
+
+.contact-content {
+  display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; justify-content: center; align-items: flex-start;
+}
+.contact-form {
+  flex: 1 1 300px; max-width: 500px; min-width: 280px; display: flex; flex-direction: column; gap: 1rem;
+}
+.contact-form .form-group { display: flex; flex-direction: column; }
+.contact-form label { font-weight: bold; margin-bottom: 0.25rem; }
+.contact-form input, .contact-form textarea {
+  width: 100%; padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none; border-color: #8000ff; box-shadow: 0 0 0 2px rgba(128,0,255,0.2);
+}
+.submit-button {
+  background-color: #8000ff; color: white; font-weight: bold;
+  padding: 0.75rem 1.25rem; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+/* ✅ fixed previous typo that truncated this rule */
+.submit-button:hover { background-color: #6a00cc; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  text-align: center; padding: 1rem 1.5rem; background: #000;
+  color: var(--text-muted); font-size: 0.9rem; margin-top: 2rem;
+}
+footer p { margin: 0; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .nav-links {
+    position: absolute; top: 100%; right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column; align-items: flex-start; padding: 1rem 2rem;
+    display: none;
+  }
+  .nav-links li { margin: 0.5rem 0; }
+  nav.open .nav-links { display: flex; }
+
+  /* Timeline stacks on mobile */
+  .timeline::before { left: 8px; transform: none; }
+  .timeline-item, .timeline-item:nth-child(odd) { flex-direction: row; }
+  .timeline-card { width: 100%; margin-left: 2rem; }
+  .timeline-item::after { left: 8px; transform: none; }
+}
+
+@media (max-width: 600px) {
+  header#home { padding: 6rem 1rem 4rem; }
+  header h1 { font-size: 2.2rem; }
+  header .tagline { font-size: 1rem; }
+
+  /* Hero responsive */
+  .hero-bg-logo { width: 100vw; height: 100vw; max-width: 500px; max-height: 500px; opacity: 0.1; }
+  .accent-1 { width: 150px; height: 150px; }
+  .accent-2 { width: 100px; height: 100px; }
+  .accent-3 { width: 120px; height: 120px; }
+
+  .about-container { flex-direction: column; text-align: center; }
+  .about-text, .about-image { flex: 1 1 100%; }
+  .about-image img { max-width: 75%; }
+
+  .services-list { grid-template-columns: 1fr; }
+}

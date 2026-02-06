@@ -1,0 +1,52 @@
+[
+  {
+    "title": "QA Consultant",
+    "company": "",
+    "dates": "July 2025 - Present",
+    "location": "Remote",
+    "bullets": [
+      "Supported QA processes and best practices across environments.",
+      "Planned regression suites and smoke tests to increase coverage."
+    ]
+  },
+  {
+    "title": "Freelance QA & Content Specialist",
+    "company": "AI Projects",
+    "dates": "June 2025 - Present",
+    "location": "Remote",
+    "bullets": [
+      "Designed test prompts; evaluated LLM outputs for correctness and UX.",
+      "Conducted ethical compliance checks on AI-generated content."
+    ]
+  },
+  {
+    "title": "Software Test Engineer",
+    "company": "Centauri Health Solutions",
+    "dates": "April 2020 - June 2025",
+    "location": "",
+    "bullets": [
+      "Built automated suites (Katalon) and managed Azure DevOps pipelines.",
+      "Authored SOPs and reusable testing templates."
+    ]
+  },
+  {
+    "title": "Software QA & DevOps",
+    "company": "Shoptech Software",
+    "dates": "May 2014 - April 2020",
+    "location": "",
+    "bullets": [
+      "Maintained 2,000+ automated tests (desktop/web/mobile) with TestComplete.",
+      "Managed CI/CD via TeamCity and Octopus Deploy."
+    ]
+  },
+  {
+    "title": "Education",
+    "company": "",
+    "dates": "2015 - 2017",
+    "location": "",
+    "bullets": [
+      "A.A.B. in Information Technology - University of Cincinnati"
+    ],
+    "isEducation": true
+  }
+]

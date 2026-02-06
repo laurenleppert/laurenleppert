@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+bodyClass: page-dispatch
+---
+<main class="dispatch-single">
+  <article class="dispatch-article">
+    <header class="dispatch-header">
+      <time class="dispatch-date" datetime="{{ date | dateShort }}">{{ date | dateFormat }}</time>
+      <h1>{{ title }}</h1>
+      {% if tags and tags.length %}
+      <div class="dispatch-tags">
+        {% for tag in tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    <div class="dispatch-content">
+      {{ content | safe }}
+    </div>
+
+    <footer class="dispatch-footer">
+      <a href="/dispatches/" class="back-link">&larr; Back to Dispatches</a>
+    </footer>
+  </article>
+</main>

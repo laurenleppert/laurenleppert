@@ -1,0 +1,135 @@
+---
+layout: layouts/base.njk
+title: Track Record
+bodyClass: page-trackrecord
+description: Coaster credits and travel log
+---
+
+<main class="trackrecord">
+  <header class="page-header">
+    <h1>Track Record</h1>
+    <p class="page-subtitle">Coaster credits and travel log</p>
+    <p class="page-meta">Last updated: {{ trackrecord.meta.asOf }}</p>
+  </header>
+
+  <!-- Stats Overview -->
+  <section class="stats-grid">
+    <div class="stat-card primary">
+      <span class="stat-number">{{ trackrecord.stats.coasterCredits }}</span>
+      <span class="stat-label">Coaster Credits</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ trackrecord.stats.parksVisited }}</span>
+      <span class="stat-label">Parks Visited</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ trackrecord.stats.statesVisited }}</span>
+      <span class="stat-label">States</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ trackrecord.stats.countriesVisited }}</span>
+      <span class="stat-label">Countries</span>
+    </div>
+  </section>
+
+  <!-- Top Coasters -->
+  <section class="section-card">
+    <header class="section-header">
+      <h2>Top Coasters</h2>
+      <p class="section-note">Personal favorites, not definitive rankings. Subject to change after any given ride.</p>
+    </header>
+    <ol class="top-list">
+      {% for coaster in trackrecord.topCoasters %}
+      <li class="top-item">
+        <span class="top-rank">#{{ coaster.rank }}</span>
+        <div class="top-details">
+          <span class="top-name">{{ coaster.name }}</span>
+          <span class="top-meta">{{ coaster.park }}{% if coaster.type %} &middot; {{ coaster.type }}{% endif %}</span>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <!-- Parks by Year -->
+  <section class="section-card">
+    <header class="section-header">
+      <h2>Parks by Year</h2>
+      <p class="section-note">Where I've been, year by year. <span class="new-badge">New</span> = first visit.</p>
+    </header>
+    <div class="years-list">
+      {% for yearData in trackrecord.parksByYear %}
+      <div class="year-group">
+        <h3 class="year-label">{{ yearData.year }}</h3>
+        {% if yearData.parks.length > 0 %}
+        <ul class="year-parks">
+          {% for park in yearData.parks %}
+          <li class="year-park{% if park.new %} is-new{% endif %}">
+            {{ park.name }}
+            <span class="park-location">{{ park.location }}</span>
+            {% if park.new %}<span class="new-badge">New</span>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="year-empty">No park visits yet</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- All Parks -->
+  <section class="section-card">
+    <header class="section-header">
+      <h2>All Parks</h2>
+      <p class="section-note">Lifetime park list, sorted alphabetically.</p>
+    </header>
+    <div class="parks-table-wrapper">
+      <table class="parks-table">
+        <thead>
+          <tr>
+            <th>Park</th>
+            <th>Location</th>
+            <th class="num">Visits</th>
+            <th class="num">Coasters</th>
+            <th class="num">First</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for park in trackrecord.allParks | sort(attribute='name') %}
+          <tr{% if park.homepark %} class="homepark"{% endif %}>
+            <td class="park-name">{{ park.name }}{% if park.homepark %} <span class="home-badge">Home</span>{% endif %}</td>
+            <td class="park-loc">{{ park.location }}</td>
+            <td class="num">{{ park.visits }}</td>
+            <td class="num">{{ park.coasters }}</td>
+            <td class="num">{{ park.firstVisit }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Milestones (optional, only shows if data exists) -->
+  {% if trackrecord.milestones.length > 0 %}
+  <section class="section-card">
+    <header class="section-header">
+      <h2>Milestones</h2>
+    </header>
+    <ul class="milestones-list">
+      {% for milestone in trackrecord.milestones %}
+      <li class="milestone">
+        <span class="milestone-credit">#{{ milestone.credit }}</span>
+        <span class="milestone-coaster">{{ milestone.coaster }}</span>
+        <span class="milestone-meta">{{ milestone.park }} &middot; {{ milestone.date }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <footer class="page-footer">
+    <p>For trip details and narratives, see <a href="/dispatches/">Dispatches</a>.</p>
+  </footer>
+</main>

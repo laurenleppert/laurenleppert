@@ -1,0 +1,15 @@
+<li class="timeline-item reveal">
+  <div class="timeline-card">
+    <h3>{{ item.title }}{% if item.company %} <span class="company">- {{ item.company }}</span>{% endif %}</h3>
+    <p class="timeline-meta">
+      <em>{{ item.dates }}{% if item.location %} &bull; {{ item.location }}{% endif %}</em>
+    </p>
+    {% if item.bullets and item.bullets.length %}
+    <ul class="timeline-bullets">
+      {% for bullet in item.bullets %}
+      <li>{{ bullet }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</li>

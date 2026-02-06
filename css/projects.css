@@ -1,0 +1,283 @@
+/* =========================================================
+   PROJECTS PAGE STYLES
+   Personality: Bold, techy, edgy - neon accents, monospace
+   ========================================================= */
+
+.page-projects {
+  --accent: #00ff88;
+  --accent-glow: rgba(0, 255, 136, 0.3);
+}
+
+.page-projects main {
+  background: var(--bg-dark);
+  background-image:
+    radial-gradient(at 20% 20%, rgba(0, 255, 136, 0.05), transparent 50%),
+    radial-gradient(at 80% 80%, rgba(191, 0, 255, 0.05), transparent 50%);
+}
+
+html.light .page-projects main {
+  background-image:
+    radial-gradient(at 20% 20%, rgba(0, 180, 100, 0.05), transparent 50%),
+    radial-gradient(at 80% 80%, rgba(122, 0, 204, 0.05), transparent 50%);
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+.page-projects .page-header {
+  position: relative;
+}
+
+.page-projects .page-header h1 {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}
+
+.page-projects .page-header h1::before {
+  content: "> ";
+  color: var(--accent);
+}
+
+/* =========================================================
+   PROJECTS GRID
+   ========================================================= */
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 0 1.5rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+.project-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(26, 26, 46, 0.9));
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--purple-primary), var(--accent));
+  opacity: 0.8;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+html.light .project-card {
+  background: linear-gradient(135deg, #f8f8fc, #ffffff);
+  border-color: rgba(0, 200, 100, 0.5);
+}
+
+html.light .project-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 200, 100, 0.2);
+}
+
+/* Featured card */
+.project-card.featured {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .project-card.featured {
+    grid-column: span 1;
+  }
+}
+
+/* Status badge */
+.project-status {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem;
+  background: var(--accent);
+  color: #0a0a0a;
+  border-radius: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.project-status.wip {
+  background: rgba(255, 200, 0, 0.9);
+}
+
+/* Project title */
+.project-card h3 {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-card h3 a {
+  color: var(--text-light);
+  transition: color 0.2s;
+}
+
+.project-card h3 a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Description */
+.project-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.project-description p {
+  margin-bottom: 0.5rem;
+}
+
+.project-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Tech tags */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(0, 255, 136, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 2px;
+}
+
+html.light .tech-tag {
+  background: rgba(0, 180, 100, 0.1);
+  color: #008844;
+  border-color: rgba(0, 180, 100, 0.3);
+}
+
+/* Project links */
+.project-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.project-link.primary {
+  background: var(--accent);
+  color: #0a0a0a;
+}
+
+.project-link.primary:hover {
+  background: #00cc6e;
+  text-decoration: none;
+}
+
+.project-link.secondary {
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-link.secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* This site card - special styling */
+.project-card.this-site {
+  border-color: var(--purple-primary);
+}
+
+.project-card.this-site::before {
+  background: linear-gradient(90deg, var(--purple-primary), var(--purple-soft), var(--purple-primary));
+}
+
+.project-card.this-site .project-status {
+  background: var(--purple-primary);
+  color: #fff;
+}
+
+/* =========================================================
+   FEEDBACK SECTION
+   ========================================================= */
+.feedback-section {
+  padding: var(--section-padding);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.feedback-section h2 {
+  font-family: var(--font-mono);
+}
+
+.feedback-section h2::before {
+  content: "// ";
+  color: var(--accent);
+}
+
+.feedback-section > p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.feedback-form {
+  text-align: left;
+}
+
+.feedback-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300ff88' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+
+.feedback-form .submit-button {
+  width: 100%;
+  margin-top: 0.5rem;
+  background: var(--accent);
+  color: #0a0a0a;
+  font-family: var(--font-mono);
+}
+
+.feedback-form .submit-button:hover {
+  background: #00cc6e;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

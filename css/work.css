@@ -1,0 +1,236 @@
+/* =========================================================
+   WORK PAGE STYLES
+   Personality: Clean, professional, minimal purple
+   ========================================================= */
+
+.page-work {
+  --accent: var(--purple-dark);
+}
+
+.page-work main {
+  background: var(--bg-dark);
+}
+
+/* =========================================================
+   TIMELINE SECTION
+   ========================================================= */
+.timeline-section {
+  padding: 0 1.5rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(191, 0, 255, 0.9), rgba(191, 0, 255, 0.2));
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 2rem 0;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+/* Timeline card */
+.timeline-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  width: calc(50% - 2rem);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.timeline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+html.light .timeline-card {
+  border-color: #e0e0e0;
+  border-left-color: var(--accent);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Dot on timeline */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--purple-primary);
+  box-shadow: 0 0 0 4px rgba(191, 0, 255, 0.15);
+}
+
+.timeline-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-card h3 .company {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.timeline-meta {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.timeline-bullets {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.timeline-bullets li {
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-light);
+}
+
+/* =========================================================
+   SKILLS SECTION
+   ========================================================= */
+.skills-section {
+  padding: var(--section-padding);
+  background: var(--bg-secondary);
+}
+
+.skills-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.skill {
+  background: var(--bg-dark);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color 0.2s;
+}
+
+.skill:hover {
+  border-color: rgba(191, 0, 255, 0.3);
+}
+
+html.light .skill {
+  background: var(--bg-secondary);
+  border-color: #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.skill-icon i {
+  color: var(--purple-primary);
+}
+
+.skill h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+.contact-section {
+  padding: var(--section-padding);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-section h2 {
+  margin-bottom: 0.75rem;
+}
+
+.contact-section > p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  text-align: left;
+}
+
+.contact-form .submit-button {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+  /* Timeline stacks on mobile */
+  .timeline::before {
+    left: 8px;
+    transform: none;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .timeline-card {
+    width: 100%;
+    margin-left: 2rem;
+  }
+
+  .timeline-item::after {
+    left: 8px;
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

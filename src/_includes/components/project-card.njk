@@ -1,0 +1,30 @@
+<div class="project-card">
+  <div class="project-header">
+    <h3>{{ project.title }}</h3>
+    {% if project.status %}
+    <span class="project-status">{{ project.status }}</span>
+    {% endif %}
+  </div>
+  <div class="project-description">
+    {{ project.description | safe }}
+  </div>
+  {% if project.tech and project.tech.length %}
+  <div class="project-tech">
+    {% for tech in project.tech %}
+    <span class="tech-tag">{{ tech }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <div class="project-links">
+    {% if project.liveUrl %}
+    <a href="{{ project.liveUrl }}" target="_blank" rel="noopener" class="project-link primary">
+      Try it Live <span aria-hidden="true">&rarr;</span>
+    </a>
+    {% endif %}
+    {% if project.repoUrl %}
+    <a href="{{ project.repoUrl }}" target="_blank" rel="noopener" class="project-link secondary">
+      <i class="fab fa-github" aria-hidden="true"></i> Source
+    </a>
+    {% endif %}
+  </div>
+</div>

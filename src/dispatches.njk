@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+title: Dispatches
+bodyClass: page-dispatches
+---
+
+<main class="dispatches">
+  <header class="page-header">
+    <h1>Dispatches</h1>
+    <div class="page-intro">
+      {{ siteContent.dispatches.intro | safe }}
+    </div>
+  </header>
+
+  <section class="dispatch-list">
+    {% for dispatch in collections.dispatches | reverse %}
+    {% include "components/dispatch-card.njk" %}
+    {% endfor %}
+
+    {% if collections.dispatches.length == 0 %}
+    <p class="empty-state">No dispatches yet. Check back soon.</p>
+    {% endif %}
+  </section>
+
+  <section class="subscribe-section">
+    <h2>Stay in the loop</h2>
+    <p>Get notified when I post something new. No spam, no schedule.</p>
+    <form action="https://buttondown.email/api/emails/embed-subscribe/laurenleppert" method="post" class="subscribe-form">
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="subscribe-note">Powered by <a href="https://buttondown.email" target="_blank" rel="noopener">Buttondown</a></p>
+  </section>
+</main>

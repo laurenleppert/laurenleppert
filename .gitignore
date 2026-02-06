@@ -2,6 +2,11 @@
 claude.exe
 .claude/
 
+# Misc
+cookies.txt
+nul
+housekeeping.md
+
 # OS files
 .DS_Store
 Thumbs.db
@@ -14,13 +19,14 @@ desktop.ini
 *.swo
 *~
 
-# Node (if added later)
+# Node
 node_modules/
 npm-debug.log*
 
 # Build output
 dist/
 build/
+_site/
 
 # Environment files
 .env

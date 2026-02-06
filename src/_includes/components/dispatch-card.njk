@@ -1,0 +1,16 @@
+<article class="dispatch-card">
+  <a href="{{ dispatch.url }}" class="dispatch-card-link">
+    <time class="dispatch-date" datetime="{{ dispatch.date | dateShort }}">{{ dispatch.date | dateFormat }}</time>
+    <h3 class="dispatch-title">{{ dispatch.data.title }}</h3>
+    {% if dispatch.data.description %}
+    <p class="dispatch-excerpt">{{ dispatch.data.description }}</p>
+    {% endif %}
+    {% if dispatch.data.tags and dispatch.data.tags.length %}
+    <div class="dispatch-tags">
+      {% for tag in dispatch.data.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </a>
+</article>

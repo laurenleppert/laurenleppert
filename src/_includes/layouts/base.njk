@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} | {{ site.title }}</title>
+
+  <!-- Meta -->
+  <meta name="description" content="{{ description or site.description }}" />
+  <meta name="theme-color" content="#bf00ff" />
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  {% if bodyClass == 'page-home' %}
+  <link rel="stylesheet" href="/css/home.css" />
+  {% elif bodyClass == 'page-work' %}
+  <link rel="stylesheet" href="/css/work.css" />
+  {% elif bodyClass == 'page-projects' %}
+  <link rel="stylesheet" href="/css/projects.css" />
+  {% elif bodyClass == 'page-dispatches' or bodyClass == 'page-dispatch' %}
+  <link rel="stylesheet" href="/css/dispatches.css" />
+  {% elif bodyClass == 'page-trackrecord' %}
+  <link rel="stylesheet" href="/css/track-record.css" />
+  {% endif %}
+</head>
+<body class="{{ bodyClass }}">
+  {% include "partials/nav.njk" %}
+
+  {{ content | safe }}
+
+  {% include "partials/footer.njk" %}
+
+  <!-- Scripts -->
+  <script src="/js/theme.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

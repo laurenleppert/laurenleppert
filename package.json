@@ -1,0 +1,22 @@
+{
+  "name": "laurenleppert-portfolio",
+  "version": "1.0.0",
+  "description": "Lauren Leppert's portfolio site - QA Engineer, builder of things",
+  "main": ".eleventy.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "debug": "DEBUG=Eleventy* eleventy"
+  },
+  "keywords": [
+    "portfolio",
+    "eleventy",
+    "11ty"
+  ],
+  "author": "Lauren Leppert",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "markdown-it": "^14.0.0"
+  }
+}

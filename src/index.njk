@@ -1,0 +1,60 @@
+---
+layout: layouts/base.njk
+title: Home
+bodyClass: page-home
+---
+
+<main class="home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg-logo" aria-hidden="true">
+      <img src="/images/logo.png" alt="">
+    </div>
+    <div class="hero-inner">
+      <h1>{{ site.title }}</h1>
+      <p class="tagline">
+        QA Engineer &bull; Builder of Things &bull; Occasional Writer
+      </p>
+      <div class="intro">
+        {{ siteContent.home.intro | safe }}
+      </div>
+    </div>
+    <!-- Animated accent elements -->
+    <div class="hero-accents" aria-hidden="true">
+      <span class="accent accent-1"></span>
+      <span class="accent accent-2"></span>
+      <span class="accent accent-3"></span>
+    </div>
+  </section>
+
+  <!-- Guidance Section -->
+  <section class="guidance">
+    <div class="guidance-content">
+      {{ siteContent.home.guidance | safe }}
+    </div>
+
+    <div class="featured-dispatch">
+      <span class="label">Latest dispatch:</span>
+      {% set latestDispatch = collections.dispatches | reverse | first %}
+      {% if latestDispatch %}
+      <a href="{{ latestDispatch.url }}">{{ latestDispatch.data.title }} &rarr;</a>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="quick-links">
+    <a href="/work/" class="quick-link">
+      <span class="link-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></span>
+      <span class="link-text">See my work</span>
+    </a>
+    <a href="/projects/" class="quick-link">
+      <span class="link-icon"><i class="fas fa-code" aria-hidden="true"></i></span>
+      <span class="link-text">Explore projects</span>
+    </a>
+    <a href="/dispatches/" class="quick-link">
+      <span class="link-icon"><i class="fas fa-pen" aria-hidden="true"></i></span>
+      <span class="link-text">Read dispatches</span>
+    </a>
+  </section>
+</main>

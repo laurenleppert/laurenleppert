@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "asOf": "2025-02-01",
+    "note": "Update this file to refresh all Track Record stats"
+  },
+
+  "stats": {
+    "coasterCredits": 0,
+    "parksVisited": 0,
+    "statesVisited": 0,
+    "countriesVisited": 1
+  },
+
+  "topCoasters": [
+    {
+      "rank": 1,
+      "name": "Placeholder Coaster",
+      "park": "Example Park",
+      "type": "Steel",
+      "year": 2024,
+      "note": ""
+    },
+    {
+      "rank": 2,
+      "name": "Another Coaster",
+      "park": "Another Park",
+      "type": "Wood",
+      "year": 2023,
+      "note": ""
+    }
+  ],
+
+  "parksByYear": [
+    {
+      "year": 2025,
+      "parks": []
+    },
+    {
+      "year": 2024,
+      "parks": [
+        { "name": "Example Park", "location": "OH", "new": true },
+        { "name": "Return Visit Park", "location": "PA", "new": false }
+      ]
+    },
+    {
+      "year": 2023,
+      "parks": [
+        { "name": "Placeholder Park", "location": "FL", "new": true }
+      ]
+    }
+  ],
+
+  "allParks": [
+    {
+      "name": "Example Park",
+      "location": "Sandusky, OH",
+      "country": "USA",
+      "firstVisit": 2020,
+      "lastVisit": 2024,
+      "visits": 5,
+      "coasters": 17,
+      "homepark": false
+    },
+    {
+      "name": "Placeholder Park",
+      "location": "Orlando, FL",
+      "country": "USA",
+      "firstVisit": 2023,
+      "lastVisit": 2023,
+      "visits": 1,
+      "coasters": 8,
+      "homepark": false
+    }
+  ],
+
+  "milestones": [
+    {
+      "credit": 100,
+      "coaster": "Milestone Coaster Name",
+      "park": "Park Name",
+      "date": "2024-06-15"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+---
+layout: layouts/base.njk
+title: Projects
+bodyClass: page-projects
+---
+
+<main class="projects">
+  <header class="page-header">
+    <h1>Projects</h1>
+    <div class="page-intro">
+      {{ siteContent.projects.intro | safe }}
+    </div>
+  </header>
+
+  <section class="projects-grid">
+    <div class="project-card featured">
+      <div class="project-status">In Progress</div>
+      <h3><a href="https://queuequest-laurenleppert.onrender.com" target="_blank" rel="noopener">QueueQuest</a></h3>
+      <div class="project-description">
+        {{ siteContent.projects.queuequest | safe }}
+      </div>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">SQLite</span>
+      </div>
+      <div class="project-links">
+        <a href="https://queuequest-laurenleppert.onrender.com" target="_blank" rel="noopener" class="project-link primary">
+          Try it Live <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-status wip">In Development</div>
+      <h3>Layover Launcher</h3>
+      <div class="project-description">
+        {{ siteContent.projects.layoverLauncher | safe }}
+      </div>
+      <div class="project-tech">
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">APIs</span>
+      </div>
+    </div>
+
+    <div class="project-card this-site">
+      <div class="project-status">Live</div>
+      <h3>This Site</h3>
+      <div class="project-description">
+        <p>The portfolio you're looking at right now. Built with Eleventy, styled from scratch, designed to be easy to update.</p>
+      </div>
+      <div class="project-tech">
+        <span class="tech-tag">Eleventy</span>
+        <span class="tech-tag">Nunjucks</span>
+        <span class="tech-tag">CSS</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="feedback-section">
+    <h2>Project Feedback</h2>
+    <p>Tried one of my projects? I'd love to hear what you think.</p>
+    <form action="https://formsubmit.co/{{ site.email }}" method="POST" class="feedback-form">
+      <input type="hidden" name="_subject" value="Project Feedback">
+      <input type="hidden" name="_captcha" value="false">
+
+      <div class="form-group">
+        <label for="project">Project</label>
+        <select id="project" name="project" required>
+          <option value="">Select a project...</option>
+          <option value="QueueQuest">QueueQuest</option>
+          <option value="Layover Launcher">Layover Launcher</option>
+          <option value="This Site">This Site</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="feedback">Feedback</label>
+        <textarea id="feedback" name="feedback" rows="4" required placeholder="What worked? What didn't? Ideas?"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="feedback-email">Email (optional)</label>
+        <input type="email" id="feedback-email" name="email" placeholder="If you'd like a response">
+      </div>
+
+      <button type="submit" class="submit-button">Send Feedback</button>
+    </form>
+  </section>
+</main>

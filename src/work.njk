@@ -1,0 +1,75 @@
+---
+layout: layouts/base.njk
+title: Work
+bodyClass: page-work
+---
+
+<main class="work">
+  <header class="page-header">
+    <h1>Work & Experience</h1>
+    <div class="page-intro">
+      {{ siteContent.work.intro | safe }}
+    </div>
+  </header>
+
+  <section class="timeline-section">
+    <ol class="timeline">
+      {% for item in timeline %}
+      {% include "components/timeline-item.njk" %}
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="skills-section">
+    <h2>What I Do</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <div class="skill-icon"><i class="fas fa-bug" aria-hidden="true"></i></div>
+        <h3>QA & Test Automation</h3>
+        <p>Manual and automated testing; integrating tests into CI/CD pipelines to ensure every release is rock-solid.</p>
+      </div>
+      <div class="skill">
+        <div class="skill-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+        <h3>Web Development & Tools</h3>
+        <p>Quirky web apps and tools that showcase creative problem-solving from concept to deploy.</p>
+      </div>
+      <div class="skill">
+        <div class="skill-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+        <h3>AI Integration</h3>
+        <p>Leveraging AI to enhance testing - from intelligent test case generation to smarter automation.</p>
+      </div>
+      <div class="skill">
+        <div class="skill-icon"><i class="fas fa-pencil-alt" aria-hidden="true"></i></div>
+        <h3>Technical Writing</h3>
+        <p>Clear documentation, tutorials, and guides - translating complex topics for teams and end users.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Get in Touch</h2>
+    <p>Interested in working together? Drop me a message or connect on <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>.</p>
+
+    <form action="https://formsubmit.co/{{ site.email }}" method="POST" class="contact-form">
+      <input type="hidden" name="_subject" value="New portfolio contact!">
+      <input type="hidden" name="_captcha" value="false">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="How can I help you?"></textarea>
+      </div>
+
+      <button type="submit" class="submit-button">Send Message</button>
+    </form>
+  </section>
+</main>

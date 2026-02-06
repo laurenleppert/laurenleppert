@@ -1,0 +1,429 @@
+/* =========================================================
+   TRACK RECORD PAGE STYLES
+   Personality: Dashboard, archival, data-focused
+   Clean grids, prominent numbers, scannable layout
+   ========================================================= */
+
+.page-trackrecord {
+  --accent: var(--purple-primary);
+  --accent-soft: rgba(191, 0, 255, 0.1);
+}
+
+.page-trackrecord main {
+  background: var(--bg-dark);
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+.page-trackrecord .page-header {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.page-trackrecord .page-header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.page-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* =========================================================
+   STATS GRID
+   ========================================================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  padding: 0 1.5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(191, 0, 255, 0.2);
+}
+
+.stat-card.primary {
+  background: linear-gradient(135deg, rgba(191, 0, 255, 0.15), rgba(191, 0, 255, 0.05));
+  border-color: rgba(191, 0, 255, 0.3);
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-light);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-card.primary .stat-number {
+  color: var(--purple-primary);
+}
+
+html.light .stat-card.primary .stat-number {
+  color: var(--purple-dark);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   SECTION CARDS
+   ========================================================= */
+.section-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 0 1.5rem 1.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html.light .section-card {
+  border-color: #e0e0e0;
+}
+
+.section-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+html.light .section-header {
+  border-color: #e8e8e8;
+}
+
+.section-header h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.section-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* =========================================================
+   TOP COASTERS LIST
+   ========================================================= */
+.top-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.top-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.top-item:last-child {
+  border-bottom: none;
+}
+
+.top-rank {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--purple-primary);
+  min-width: 2.5rem;
+}
+
+.top-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.top-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.top-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   PARKS BY YEAR
+   ========================================================= */
+.years-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.year-group {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.year-label {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--purple-primary);
+  margin: 0;
+}
+
+.year-parks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.year-park {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.year-park.is-new {
+  background: rgba(191, 0, 255, 0.1);
+}
+
+.park-location {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.year-empty {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* New badge */
+.new-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.4rem;
+  background: var(--purple-primary);
+  color: #fff;
+  border-radius: 3px;
+}
+
+/* =========================================================
+   ALL PARKS TABLE
+   ========================================================= */
+.parks-table-wrapper {
+  overflow-x: auto;
+  margin: 0 -0.5rem;
+  padding: 0 0.5rem;
+}
+
+.parks-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.parks-table th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.parks-table th.num {
+  text-align: right;
+}
+
+.parks-table td {
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.parks-table td.num {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.parks-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.parks-table .park-name {
+  font-weight: 500;
+}
+
+.parks-table .park-loc {
+  color: var(--text-muted);
+}
+
+.parks-table tr.homepark {
+  background: rgba(191, 0, 255, 0.05);
+}
+
+.home-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.1rem 0.3rem;
+  background: var(--purple-soft);
+  color: #1a1a1a;
+  border-radius: 3px;
+  margin-left: 0.25rem;
+}
+
+/* =========================================================
+   MILESTONES
+   ========================================================= */
+.milestones-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.milestone {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+}
+
+.milestone-credit {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--purple-primary);
+  min-width: 3rem;
+}
+
+.milestone-coaster {
+  font-weight: 600;
+  flex: 1;
+}
+
+.milestone-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   PAGE FOOTER
+   ========================================================= */
+.page-trackrecord .page-footer {
+  text-align: center;
+  padding: 2rem 1.5rem 3rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.page-trackrecord .page-footer p {
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .year-group {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .year-label {
+    font-size: 1.25rem;
+  }
+
+  .section-card {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1.25rem;
+  }
+
+  .milestone {
+    flex-wrap: wrap;
+  }
+
+  .milestone-meta {
+    width: 100%;
+    margin-left: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .stat-card {
+    padding: 1rem 0.75rem;
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
+  }
+
+  .parks-table {
+    font-size: 0.8rem;
+  }
+}

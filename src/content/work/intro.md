@@ -1,0 +1,1 @@
+10+ years of making sure software works the way it should. I specialize in both meticulous manual testing and building robust automated test suites, always eager to integrate new tech to keep testing efficient and effective.

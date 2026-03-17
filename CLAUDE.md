@@ -126,3 +126,7 @@ Post content here...
 - `track-record.css` - Dashboard cards, stats grid
 
 ---
+
+When you require my approval or input, end your message with exactly:
+WAITING_FOR_APPROVAL
+Do not continue until I respond.

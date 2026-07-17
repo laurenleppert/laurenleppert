@@ -1,129 +1,61 @@
-# Project 2: Portfolio Site (laurenleppert.com)
+# laurenleppert.com
 
-**Path:** `C:\Repos\PortfolioSite`
 **Repo:** https://github.com/laurenleppert/laurenleppert
-**Type:** Eleventy static site
+**Type:** Eleventy static site → GitHub Pages (custom domain via `CNAME`)
 
 ## Summary
-Personal portfolio site with four distinct sections, each with unique design personalities. Built with Eleventy for easy content updates via markdown and JSON data files.
+A single-page personal landing site: name, a two-line role tagline, a short bio,
+and two links (LinkedIn + Contact). Deliberately minimal — a clean professional
+front door, not a portfolio. The heavier product story now lives at **coastory.app**
+(built separately); this site stays lean and low-maintenance.
+
+Coastory is mentioned by name in the bio but **not linked** until the app is on the
+app stores.
 
 ## Tech Stack
 - **Generator:** Eleventy (11ty)
 - **Templates:** Nunjucks
-- **Styling:** Modular CSS per section
-- **Content:** Markdown files + JSON data
+- **Styling:** `css/base.css` (tokens + reset) + `css/landing.css` (the page)
+- **Deploy:** GitHub Actions builds with Eleventy and publishes `_site/` to Pages
 
 ## Key Commands
 ```bash
-cd C:\Repos\PortfolioSite
-npm install                      # Install dependencies (first time)
-npx eleventy --serve             # Run dev server (http://localhost:8080)
-npx eleventy                     # Build to _site/
+npm install                 # first time
+npx @11ty/eleventy --serve  # dev server (http://localhost:8080)
+npx @11ty/eleventy          # build to _site/
 ```
 
 ## Workflow Rules
 - Do NOT commit or push changes unless explicitly asked.
 - Commit messages should be descriptive and list key changes.
-- Test changes locally before committing when possible.
+- Test changes locally (build + eyeball in a browser) before committing when possible.
 
 ## Architecture
-- `src/` - Source files
-  - `_includes/layouts/` - Base templates (base.njk, page.njk, dispatch.njk)
-  - `_includes/partials/` - Reusable components (nav.njk, footer.njk)
-  - `_includes/components/` - UI components (timeline-item, project-card, dispatch-card)
-  - `_data/` - JSON data files (site.json, navigation.json, timeline.json, trackrecord.json)
-  - `content/` - Editable markdown content by section
-  - `dispatches/` - Blog posts with frontmatter
-  - `*.njk` - Page templates (index, work, projects, dispatches, track-record)
-- `css/` - Modular stylesheets (base.css, nav.css, home.css, work.css, projects.css, dispatches.css, track-record.css)
-- `js/` - Theme toggle and navigation scripts
-- `_site/` - Build output (gitignored)
+- `src/`
+  - `index.njk` — the entire page (name, tagline, bio, links, footer, theme toggle)
+  - `_includes/layouts/base.njk` — HTML shell (head, fonts, styles, theme script)
+  - `_data/site.json` — title, description, email, LinkedIn URL
+- `css/base.css` — CSS variables (purple palette, fonts), reset, base element styles
+- `css/landing.css` — all landing-page layout and styling
+- `js/theme.js` — dark/light toggle (persisted, respects `prefers-color-scheme`)
+- `images/` — `logo.png` is the favicon
+- `archive/` — legacy files from the old multi-section site; **not part of the build**
+- `_site/` — build output (gitignored)
 
-## Sections & Design Personalities
+## Editing the Page
+Nearly everything lives in `src/index.njk`:
+- **Name / tagline / bio** — plain text in the `.landing-*` markup
+- **Links** — the `.landing-links` block (LinkedIn URL + Contact `mailto:` come from `site.json`)
+- **Email / LinkedIn / meta description** — `src/_data/site.json`
 
-| Section | Path | Personality | Color Emphasis | Key Data |
-|---------|------|-------------|----------------|----------|
-| Home | `/` | Welcoming, clear | Balanced purple | - |
-| Work | `/work/` | Professional, clean | Minimal purple, neutrals | timeline.json |
-| Projects | `/projects/` | Bold, techy, edgy | Neon accents | content/projects/*.md |
-| Dispatches | `/dispatches/` | Playful, relaxed | Soft purple, warm | dispatches/*.md |
-| Track Record | `/track-record/` | Dashboard-style | Stats-focused | trackrecord.json |
+Keep the role wording consistent across the tagline, bio, and `site.json` description
+(currently "Software QA Engineer").
 
-**Unifying elements across all pages:**
-- Same nav structure and logo
-- Purple as the accent color (varying intensity per section)
-- Same fonts (Fredoka + Nunito), but weight/usage varies
-- Consistent footer
-- Theme toggle (dark/light) works everywhere
-
-## Content Editing
-
-### Work Experience
-Edit `src/_data/timeline.json`:
-```json
-{
-  "title": "Job Title",
-  "company": "Company Name",
-  "dates": "Start – End",
-  "location": "City, State",
-  "bullets": ["Achievement 1", "Achievement 2"]
-}
-```
-
-### Coaster Stats (Track Record)
-Edit `src/_data/trackrecord.json`:
-- `stats`: Total counts (credits, parks, states, countries)
-- `topCoasters`: Ranked favorites
-- `parksByYear`: Year-by-year park visits
-- `allParks`: Lifetime park list with visit counts
-- `milestones`: Credit milestones (#100, etc.)
-
-### Intro/Body Text
-Edit markdown files in `src/content/`:
-- `home/intro.md` - Homepage intro blurb
-- `home/guidance.md` - Orientation text
-- `work/intro.md` - Work page intro
-- `projects/intro.md` - Projects page intro
-- `projects/queuequest.md` - QueueQuest description
-- `projects/layover-launcher.md` - Layover Launcher description
-- `dispatches/intro.md` - "This is not a blog" explainer
-
-### Blog Posts (Dispatches)
-Add `.md` files to `src/dispatches/` with frontmatter:
-```markdown
----
-title: Post Title
-date: 2025-02-05
-tags:
-  - tag1
-  - tag2
-description: Short description for cards
----
-
-Post content here...
-```
-
-## CSS Architecture
-
-### Base Variables (`css/base.css`)
-```css
-:root {
-  --purple-primary: #bf00ff;
-  --purple-dark: #7a00cc;
-  --purple-soft: #d580ff;
-  --bg-dark: #121212;
-  --text-light: #eeeeee;
-  --font-heading: 'Fredoka', sans-serif;
-  --font-body: 'Nunito', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-}
-```
-
-### Section-Specific Styles
-- `work.css` - Professional, muted, clean lines
-- `projects.css` - Bold, angular, neon green accents
-- `dispatches.css` - Soft, rounded, warm feel
-- `track-record.css` - Dashboard cards, stats grid
+## Design Notes
+- Fonts: Fredoka (headings) + Nunito (body), loaded from Google Fonts in `base.njk`
+- Accent: purple (`--purple-primary`), lightened in light mode
+- Single centered column, soft purple radial glow, pill link buttons
+- Dark/light toggle floats top-right and works site-wide
 
 ---
 

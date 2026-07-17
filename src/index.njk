@@ -1,60 +1,39 @@
 ---
 layout: layouts/base.njk
-title: Home
-bodyClass: page-home
+bodyClass: page-landing
 ---
 
-<main class="home">
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-bg-logo" aria-hidden="true">
-      <img src="/images/logo.png" alt="">
-    </div>
-    <div class="hero-inner">
-      <h1>{{ site.title }}</h1>
-      <p class="tagline">
-        QA Engineer &bull; Builder of Things &bull; Occasional Writer
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">🌙</button>
+
+<main class="landing">
+  <div class="landing-glow" aria-hidden="true"></div>
+
+  <div class="landing-inner">
+    <h1 class="landing-name">Lauren Leppert</h1>
+
+    <p class="landing-tagline">
+      <span class="landing-role">Software QA Engineer</span>
+      <span class="landing-subrole">Designing thoughtful software experiences</span>
+    </p>
+
+    <div class="landing-bio">
+      <p>Hi, I&rsquo;m Lauren.</p>
+      <p>
+        I&rsquo;m a Software QA Engineer with a passion for thoughtful product design
+        and creating software that&rsquo;s enjoyable to use. Outside of work, you&rsquo;ll
+        usually find me at an amusement park or working on Coastory, a mobile app
+        inspired by my love of roller coasters and the stories behind them.
       </p>
-      <div class="intro">
-        {{ siteContent.home.intro | safe }}
-      </div>
-    </div>
-    <!-- Animated accent elements -->
-    <div class="hero-accents" aria-hidden="true">
-      <span class="accent accent-1"></span>
-      <span class="accent accent-2"></span>
-      <span class="accent accent-3"></span>
-    </div>
-  </section>
-
-  <!-- Guidance Section -->
-  <section class="guidance">
-    <div class="guidance-content">
-      {{ siteContent.home.guidance | safe }}
     </div>
 
-    <div class="featured-dispatch">
-      <span class="label">Latest dispatch:</span>
-      {% set latestDispatch = collections.dispatches | reverse | first %}
-      {% if latestDispatch %}
-      <a href="{{ latestDispatch.url }}">{{ latestDispatch.data.title }} &rarr;</a>
-      {% endif %}
-    </div>
-  </section>
+    <nav class="landing-links" aria-label="Contact links">
+      <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:{{ site.email }}">Contact</a>
+    </nav>
+  </div>
 
-  <!-- Quick Links -->
-  <section class="quick-links">
-    <a href="/work/" class="quick-link">
-      <span class="link-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></span>
-      <span class="link-text">See my work</span>
-    </a>
-    <a href="/projects/" class="quick-link">
-      <span class="link-icon"><i class="fas fa-code" aria-hidden="true"></i></span>
-      <span class="link-text">Explore projects</span>
-    </a>
-    <a href="/dispatches/" class="quick-link">
-      <span class="link-icon"><i class="fas fa-pen" aria-hidden="true"></i></span>
-      <span class="link-text">Read dispatches</span>
-    </a>
-  </section>
+  <footer class="landing-footer">
+    <p>&copy; <span id="year"></span> {{ site.author }}</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
 </main>

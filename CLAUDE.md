@@ -1,61 +1,48 @@
 # laurenleppert.com
 
-**Repo:** https://github.com/laurenleppert/laurenleppert
-**Type:** Eleventy static site → GitHub Pages (custom domain via `CNAME`)
+**Repository:** https://github.com/laurenleppert/laurenleppert
 
-## Summary
-A single-page personal landing site: name, a two-line role tagline, a short bio,
-and two links (LinkedIn + Contact). Deliberately minimal — a clean professional
-front door, not a portfolio. The heavier product story now lives at **coastory.app**
-(built separately); this site stays lean and low-maintenance.
+**Stack:** Eleventy 2 + Nunjucks → GitHub Pages; custom domain via `CNAME`.
 
-Coastory is mentioned by name in the bio but **not linked** until the app is on the
-app stores.
+## Purpose and approved positioning
 
-## Tech Stack
-- **Generator:** Eleventy (11ty)
-- **Templates:** Nunjucks
-- **Styling:** `css/base.css` (tokens + reset) + `css/landing.css` (the page)
-- **Deploy:** GitHub Actions builds with Eleventy and publishes `_site/` to Pages
+Personal site combining established QA experience, independent apps, and approachable contact information. The homepage and Rooklet overview follow the approved September 2026 design. Coastory links to **coastory.app**; Rooklet and future apps can have public pages under `/apps/` on this domain.
 
-## Key Commands
-```bash
-npm install                 # first time
-npx @11ty/eleventy --serve  # dev server (http://localhost:8080)
-npx @11ty/eleventy          # build to _site/
-```
+- Lauren has built her own apps and websites, but has not been hired to design them for clients. Do not imply client development work.
+- Do not advertise availability or add hiring banners, testimonials, invented case studies, or achievement statistics. LinkedIn holds the detailed résumé.
+- Use **IGS Energy (contract)** and **QA consulting**, both **2025–present**. Omit the recruiting firm’s name.
+- Preserve approved personal wording (starts “Most of what I build starts with something I care about…”) and AI workflow wording (starts “I use AI across the QA process…”).
+- Rooklet remains **Coming soon**. Source-grounded product copy and privacy facts were obtained from Claude on 11 September 2026. Current public scope includes rough week/month planning and optional habits, meals, and movement. Do not equate a visible habit card with mandatory participation, or promise lossless changes or device-exclusive storage when platform backup can apply. Do not invent release, platform, or pricing claims. All modules, including habits, remain optional to use.
+- Leppert Labs LLC branding and app operator details are deferred.
+- Privacy and terms need actual approved policy text before pages or links are added. The shared information layout is ready; the support page is real.
 
-## Workflow Rules
-- Do NOT commit or push changes unless explicitly asked.
-- Commit messages should be descriptive and list key changes.
-- Test changes locally (build + eyeball in a browser) before committing when possible.
+## Workflow
 
-## Architecture
-- `src/`
-  - `index.njk` — the entire page (name, tagline, bio, links, footer, theme toggle)
-  - `_includes/layouts/base.njk` — HTML shell (head, fonts, styles, theme script)
-  - `_data/site.json` — title, description, email, LinkedIn URL
-- `css/base.css` — CSS variables (purple palette, fonts), reset, base element styles
-- `css/landing.css` — all landing-page layout and styling
-- `js/theme.js` — dark/light toggle (persisted, respects `prefers-color-scheme`)
-- `images/` — `logo.png` is the favicon
-- `archive/` — legacy files from the old multi-section site; **not part of the build**
-- `_site/` — build output (gitignored)
+- **Do not commit or push unless explicitly asked.** A push to `main` publishes via GitHub Actions.
+- Preserve existing dependencies and hosting. `_site/` is generated and ignored.
+- Build and inspect in a browser before handing off changes. Check desktop/mobile, both themes, local navigation, image loading, and keyboard focus.
+- `npm ci` installs, `npm start` serves, `npm run build` builds. An alternate preview port uses `npm start -- --port=8088`.
 
-## Editing the Page
-Nearly everything lives in `src/index.njk`:
-- **Name / tagline / bio** — plain text in the `.landing-*` markup
-- **Links** — the `.landing-links` block (LinkedIn URL + Contact `mailto:` come from `site.json`)
-- **Email / LinkedIn / meta description** — `src/_data/site.json`
+## Source map
 
-Keep the role wording consistent across the tagline, bio, and `site.json` description
-(currently "Software QA Engineer").
+- `src/index.njk`: homepage.
+- `src/apps/rooklet/`: overview, inherited app data, and support.
+- `src/_includes/layouts/base.njk`: metadata and shared shell.
+- `src/_includes/layouts/app-information.njk`: support and future approved policy documents.
+- `src/_includes/partials/`: navigation and footer.
+- `src/_data/site.json`: contact, identity, default sharing metadata.
+- `css/base.css`: shared color tokens and reset. `css/site.css`: all layout and component styling.
+- `js/theme-init.js`: pre-paint theme. `js/theme.js`: accessible toggle, safe persistence, system preference changes.
+- `images/apps/`: local app icons and screenshots. `images/social-preview.png`: sharing graphic. `images/favicon.svg`: small icon.
+- `archive/`: historical assets, excluded from the build.
 
-## Design Notes
-- Fonts: Fredoka (headings) + Nunito (body), loaded from Google Fonts in `base.njk`
-- Accent: purple (`--purple-primary`), lightened in light mode
-- Single centered column, soft purple radial glow, pill link buttons
-- Dark/light toggle floats top-right and works site-wide
+## Design and assets
+
+Purple light/dark palettes, Manrope for professional text, Fredoka for the name and selected personal/product headings. Preserve compact phone imagery on mobile, readable longform pages, and the quiet contact wording.
+
+Both Coastory previews use **Lauren’s profile**, from the existing Play Store screenshot. Do not replace it with someone else’s profile. Refresh after the app redesign alongside the store and coastory.app screenshots. Rooklet imagery is an interim development capture.
+
+The site works as static HTML without JavaScript; only the theme preference is enhanced. Fonts come from Google Fonts as in the previous site. See README for policy-page integration and launch follow-ups.
 
 ---
 

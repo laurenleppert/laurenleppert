@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+---
+<main id="main-content" class="ll-information ll-wrap" tabindex="-1">
+  <div class="ll-detail-top"><a href="{{ appUrl }}">Back to {{ appName }}</a></div>
+  <article class="ll-document">
+    <header>
+      <p class="ll-document-app">{{ appName }}</p>
+      <h1>{{ heading or title }}</h1>
+      {% if intro %}<p class="ll-document-intro">{{ intro }}</p>{% endif %}
+      {% if updated %}<p class="ll-document-date">Last updated {{ updated }}</p>{% endif %}
+    </header>
+    <div class="ll-prose">{{ content | safe }}</div>
+  </article>
+</main>

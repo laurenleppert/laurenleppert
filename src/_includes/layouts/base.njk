@@ -1,27 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ site.title }}</title>
-
-  <!-- Meta -->
-  <meta name="description" content="{{ description or site.description }}" />
-  <meta name="theme-color" content="#bf00ff" />
-  <link rel="icon" href="/images/logo.png" />
-
-  <!-- Fonts -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% set pageTitle = title or site.title %}
+  {% set pageDescription = description or site.description %}
+  {% set pageImage = image or site.image %}
+  {% set canonicalUrl = site.url ~ page.url %}
+  <title>{{ pageTitle | escape }}</title>
+  <meta name="description" content="{{ pageDescription | escape }}">
+  <link rel="canonical" href="{{ canonicalUrl }}">
+  {% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
+  <meta name="theme-color" content="#17131e" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fcfaff" media="(prefers-color-scheme: light)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lauren Leppert">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="{{ pageTitle | escape }}">
+  <meta property="og:description" content="{{ pageDescription | escape }}">
+  <meta property="og:url" content="{{ canonicalUrl }}">
+  <meta property="og:image" content="{{ site.url }}{{ pageImage }}">
+  <meta property="og:image:alt" content="{{ (imageAlt or site.imageAlt) | escape }}">
+  <meta property="og:image:width" content="{{ imageWidth or 1200 }}">
+  <meta property="og:image:height" content="{{ imageHeight or 630 }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ pageTitle | escape }}">
+  <meta name="twitter:description" content="{{ pageDescription | escape }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ pageImage }}">
+  <meta name="twitter:image:alt" content="{{ (imageAlt or site.imageAlt) | escape }}">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/images/logo.png" type="image/png">
+  <script src="/js/theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/base.css" />
-  <link rel="stylesheet" href="/css/landing.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <script src="/js/theme.js" defer></script>
 </head>
-<body class="{{ bodyClass }}">
-  {{ content | safe }}
-
-  <script src="/js/theme.js"></script>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="site-shell">
+    {% include "partials/nav.njk" %}
+    {{ content | safe }}
+    {% include "partials/footer.njk" %}
+  </div>
 </body>
 </html>

@@ -1,39 +1,139 @@
 ---
 layout: layouts/base.njk
-bodyClass: page-landing
 ---
-
-<button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">🌙</button>
-
-<main class="landing">
-  <div class="landing-glow" aria-hidden="true"></div>
-
-  <div class="landing-inner">
-    <h1 class="landing-name">Lauren Leppert</h1>
-
-    <p class="landing-tagline">
-      <span class="landing-role">Software QA Engineer</span>
-      <span class="landing-subrole">Designing thoughtful software experiences</span>
-    </p>
-
-    <div class="landing-bio">
-      <p>Hi, I&rsquo;m Lauren.</p>
-      <p>
-        I&rsquo;m a Software QA Engineer with a passion for thoughtful product design
-        and creating software that&rsquo;s enjoyable to use. Outside of work, you&rsquo;ll
-        usually find me at an amusement park or working on Coastory, a mobile app
-        inspired by my love of roller coasters and the stories behind them.
-      </p>
+<main id="main-content" tabindex="-1">
+  <section class="ll-hero ll-wrap">
+    <div class="ll-hero-copy">
+      <h1>A QA engineer who builds software.</h1>
+      <p>More than a decade in software quality shapes how I design, build, and test software. My own apps give me room to work through the whole process, from the first idea to something people can use.</p>
+      <div class="ll-actions">
+        <a class="ll-primary" href="/#apps">Explore my apps <svg class="ll-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a><a class="ll-textlink" href="/#experience">My experience</a>
+      </div>
     </div>
-
-    <nav class="landing-links" aria-label="Contact links">
-      <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:{{ site.email }}">Contact</a>
-    </nav>
+    <div class="ll-hero-art" aria-label="Coastory and Rooklet product previews">
+      <div class="ll-orbit" aria-hidden="true">
+      </div>
+      <figure class="ll-phone ll-profile-phone">
+        <img src="/images/apps/coastory-profile.png" alt="Lauren’s Coastory profile, with coaster credits, parks visited, and favorite rides" width="1080" height="2160">
+      </figure>
+      <figure class="ll-phone">
+        <img src="/images/apps/rooklet-preview.png" alt="Rooklet development preview showing daily tasks and optional habits" width="390" height="844">
+      </figure>
+    </div>
+  </section>
+  <div class="ll-flow">
+    <section class="ll-wrap" data-order="work">
+      <div class="ll-work">
+        <h2>What I work on</h2>
+        <div class="ll-capabilities">
+          <article>
+            <h3>Quality engineering &amp; consulting</h3>
+            <p>QA strategy, exploratory testing, automation, and quality reviews that help a team understand its risks and decide what to address.</p>
+          </article>
+          <article>
+            <h3>Apps &amp; websites</h3>
+            <p>My own apps and websites are where I put product design, development, and testing into practice.</p>
+          </article>
+          <article>
+            <h3>AI-assisted engineering workflows</h3>
+            <p>I use AI across the QA process, from analyzing requirements and planning coverage to supporting exploratory testing, reporting, and automated test creation. The workflow is designed around review and verification rather than handing decisions over to the model.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="apps" class="ll-section ll-wrap" data-order="apps">
+      <div class="ll-section-head">
+        <h2>Apps of my own</h2>
+        <p>Personal interests turned into products I design, build, and look after.</p>
+      </div>
+      <div class="ll-app-grid">
+        <article>
+          <div class="ll-app-cover">
+            <div class="ll-cover-title">
+              <img src="/images/apps/coastory-icon.webp" alt="" width="41" height="41">Every ride<br>has a story.
+            </div>
+            <figure class="ll-phone ll-profile-phone">
+              <img src="/images/apps/coastory-profile.png" alt="Lauren’s Coastory profile, with coaster credits, parks visited, and favorite rides" width="1080" height="2160">
+            </figure>
+          </div>
+          <div class="ll-app-desc">
+            <div class="ll-app-heading">
+              <h3>Coastory</h3>
+              <span class="ll-status">In beta</span>
+            </div>
+            <p>A place to keep your roller coaster history, revisit park visits, and remember the details of each ride.</p>
+            <p class="ll-ownership">My own product, from the first concept through development, testing, and beta.</p>
+            <div class="ll-actions">
+              <a class="ll-textlink" href="https://coastory.app/" target="_blank" rel="noopener noreferrer">Explore Coastory <svg class="ll-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="ll-app-cover rooklet">
+            <div class="ll-cover-title">
+              <img src="/images/apps/rooklet-icon.png" alt="" width="41" height="41">A little room<br>for your day.
+            </div>
+            <figure class="ll-phone">
+              <img src="/images/apps/rooklet-preview.png" alt="Rooklet development screen showing tasks and optional habits" width="390" height="844">
+            </figure>
+          </div>
+          <div class="ll-app-desc">
+            <div class="ll-app-heading">
+              <h3>Rooklet</h3>
+              <span class="ll-status">Coming soon</span>
+            </div>
+            <p>A day-planning app for tasks, habits, meals, and movement. Capture something now, give it a rough week or month, or choose an exact day. Use the parts that help you and leave the rest.</p>
+            <p class="ll-ownership">My next independent app, currently in development.</p>
+            <div class="ll-actions">
+              <a class="ll-textlink" href="/apps/rooklet/">Meet Rooklet <svg class="ll-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   </div>
-
-  <footer class="landing-footer">
-    <p>&copy; <span id="year"></span> {{ site.author }}</p>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  </footer>
+  <section id="experience" class="ll-section ll-wrap">
+    <div class="ll-experience">
+      <div class="ll-experience-intro">
+        <h2>My background in quality</h2>
+        <p>I’ve worked across healthcare, manufacturing, fintech, and SaaS. My work brings me into the whole development process: clarifying what’s needed, finding risks early, and helping teams understand what’s ready.</p>
+        <div class="ll-actions">
+          <a class="ll-textlink" href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer">Full experience on LinkedIn <svg class="ll-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+        </div>
+      </div>
+      <div class="ll-career">
+        <div class="ll-career-row">
+          <strong>IGS Energy (contract)</strong><span>2025–present</span>
+          <p>I own QA for a CRM team across planning, testing, automation, and release, including AI-assisted workflows.</p>
+        </div>
+        <div class="ll-career-row">
+          <strong>QA consulting</strong><span>2025–present</span>
+          <p>QA strategy, API testing, and payment-flow testing, with experience across startups and SaaS teams.</p>
+        </div>
+        <div class="ll-career-row">
+          <strong>Centauri Health Solutions</strong><span>2020–2025</span>
+          <p>Manual and automated testing across healthcare software, with shared processes and documentation for the teams using it.</p>
+        </div>
+        <div class="ll-career-row">
+          <strong>Shoptech Software</strong><span>2014–2020</span>
+          <p>Test automation and delivery infrastructure across desktop, web, and mobile software.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="ll-wrap">
+    <div class="ll-about">
+      <h2>There’s usually a personal reason.</h2>
+      <p>Most of what I build starts with something I care about and a tool I wish existed. Coastory grew out of roller coasters; Rooklet grew out of wanting everyday planning to work a little better for me.</p>
+    </div>
+  </section>
+  <section id="contact" class="ll-contact ll-wrap">
+    <div>
+      <h2>Something in mind?</h2>
+      <p>For a question about my work or one of my apps, get in touch.</p>
+    </div>
+    <div class="ll-actions">
+      <a class="ll-primary" href="mailto:{{ site.email }}">Say hello <svg class="ll-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a><a class="ll-textlink" href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </section>
 </main>

@@ -1,10 +1,12 @@
 {
-  "title": "Lauren Leppert",
-  "description": "Lauren Leppert — Software QA Engineer, product builder, and roller coaster enthusiast.",
+  "title": "Lauren Leppert — QA engineer and independent app builder",
+  "description": "Lauren Leppert: software quality, AI-assisted engineering workflows, and independent apps including Coastory and Rooklet.",
   "url": "https://laurenleppert.com",
   "author": "Lauren Leppert",
-  "email": "me@laurenleppert.com",
+  "email": "lauren@velocicoder.dev",
   "social": {
     "linkedin": "https://linkedin.com/in/lauren-leppert-qa"
-  }
+  },
+  "image": "/images/social-preview.png",
+  "imageAlt": "Lauren Leppert. A QA engineer who builds software."
 }

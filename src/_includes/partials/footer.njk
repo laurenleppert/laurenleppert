@@ -1,0 +1,12 @@
+<footer class="ll-footer ll-wrap">
+  <span>© {{ buildYear }} {{ site.author }}</span>
+  <div>
+    {% if appName %}
+      <a href="{{ appUrl }}">{{ appName }}</a>
+      <a href="{{ supportUrl }}">Support</a>
+    {% else %}
+      <a href="/#apps">Apps</a>
+    {% endif %}
+    <a href="mailto:{{ site.email }}">Contact</a>
+  </div>
+</footer>

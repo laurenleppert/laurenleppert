@@ -119,7 +119,7 @@
 }
 .site-shell .ll-hero-copy h1 {
   font:500 clamp(36px,4.7cqw,54px)/1.08 'Fredoka',sans-serif;
-  letter-spacing:-.03em;
+  letter-spacing:normal;
   max-width:20ch;
 }
 .site-shell .ll-hero-copy p {

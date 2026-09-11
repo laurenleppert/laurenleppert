@@ -12,6 +12,7 @@ Personal site combining established QA experience, independent apps, and approac
 - Do not advertise availability or add hiring banners, testimonials, invented case studies, or achievement statistics. LinkedIn holds the detailed résumé.
 - Use **IGS Energy (contract)** and **QA consulting**, both **2025–present**. Omit the recruiting firm’s name.
 - Preserve approved personal wording (starts “Most of what I build starts with something I care about…”) and AI workflow wording (starts “I use AI across the QA process…”).
+- Do not use em dashes in public site copy, page titles, sharing metadata, or image text. Use ordinary sentences, commas, colons, or a vertical bar for title separators.
 - Rooklet remains **Coming soon**. Source-grounded product copy and privacy facts were obtained from Claude on 11 September 2026. Current public scope includes rough week/month planning and optional habits, meals, and movement. Do not equate a visible habit card with mandatory participation, or promise lossless changes or device-exclusive storage when platform backup can apply. Do not invent release, platform, or pricing claims. All modules, including habits, remain optional to use.
 - Leppert Labs LLC branding and app operator details are deferred.
 - Personal-site contact links use **me@laurenleppert.com**. Rooklet contact, support, and policy pages use **lauren@velocicoder.dev**, supplied by `appEmail` in its directory data. Do not replace the global site email for an app-specific change.

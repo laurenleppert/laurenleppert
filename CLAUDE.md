@@ -12,6 +12,7 @@ Personal site combining established QA experience, independent apps, and approac
 - Do not advertise availability or add hiring banners, testimonials, invented case studies, or achievement statistics. LinkedIn holds the detailed résumé.
 - Use **IGS Energy (contract)** and **QA consulting**, both **2025–present**. Omit the recruiting firm’s name.
 - Preserve approved personal wording (starts “Most of what I build starts with something I care about…”) and AI workflow wording (starts “I use AI across the QA process…”).
+- The approved homepage headline is “I make better software, whether I’m testing it or building it.” Use rounded Fredoka lettering, with a small handwritten “made by me” note beside the app previews and no arrow on that note.
 - Do not use em dashes in public site copy, page titles, sharing metadata, or image text. Use ordinary sentences, commas, colons, or a vertical bar for title separators.
 - Rooklet remains **Coming soon**. Source-grounded product copy and privacy facts were obtained from Claude on 11 September 2026. Current public scope includes rough week/month planning and optional habits, meals, and movement. Do not equate a visible habit card with mandatory participation, or promise lossless changes or device-exclusive storage when platform backup can apply. Do not invent release, platform, or pricing claims. All modules, including habits, remain optional to use.
 - Leppert Labs LLC branding and app operator details are deferred.
@@ -35,12 +36,12 @@ Personal site combining established QA experience, independent apps, and approac
 - `src/_data/site.json`: contact, identity, default sharing metadata.
 - `css/base.css`: shared color tokens and reset. `css/site.css`: all layout and component styling.
 - `js/theme-init.js`: pre-paint theme. `js/theme.js`: accessible toggle, safe persistence, system preference changes.
-- `images/apps/`: local app icons and screenshots. `images/social-preview.png`: sharing graphic. `images/favicon.svg`: small icon.
+- `images/apps/`: local app icons and screenshots. `images/social-preview-v2.png`: current sharing graphic. `images/favicon.svg`: small icon.
 - `archive/`: historical assets, excluded from the build.
 
 ## Design and assets
 
-Purple light/dark palettes, Manrope for professional text, Fredoka for the name and selected personal/product headings. Preserve compact phone imagery on mobile, readable longform pages, and the quiet contact wording.
+Purple light/dark palettes, Manrope for professional text, Fredoka for the name, homepage headline, and selected personal/product headings. Patrick Hand is used only for the “made by me” note. Preserve compact phone imagery on mobile, readable longform pages, and the quiet contact wording.
 
 Both Coastory previews use **Lauren’s profile**, from the existing Play Store screenshot. Do not replace it with someone else’s profile. Refresh after the app redesign alongside the store and coastory.app screenshots. Rooklet imagery is an interim development capture.
 

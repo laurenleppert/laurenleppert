@@ -7,7 +7,7 @@ intro: Rooklet is still in development. You can reach me with questions, feedbac
 ---
 ## Get in touch
 
-Email [{{ site.email }}](mailto:{{ site.email }}?subject=Rooklet%20support). Rooklet is my own app, so your message comes to me.
+Email [{{ appEmail }}](mailto:{{ appEmail }}?subject=Rooklet%20support). Rooklet is my own app, so your message comes to me.
 
 ## Reporting an issue
 

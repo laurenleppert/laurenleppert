@@ -192,7 +192,7 @@
   box-shadow:0 18px 28px #16082024;
   flex-shrink:0;
   background:#f7f5fa;
-  aspect-ratio:390/844;
+  aspect-ratio:660/1434;
 }
 .site-shell .ll-phone img {
   width:100%;
@@ -201,7 +201,7 @@
   object-position:top;
 }
 .site-shell .ll-phone.ll-profile-phone {
-  aspect-ratio:1/2;
+  aspect-ratio:660/1319;
 }
 .site-shell .ll-hero-art .ll-phone {
   width:44%;

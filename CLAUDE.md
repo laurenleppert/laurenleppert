@@ -43,7 +43,7 @@ Personal site combining established QA experience, independent apps, and approac
 
 Purple light/dark palettes, Manrope for professional text, Fredoka for the name, homepage headline, and selected personal/product headings. Patrick Hand is used only for the “made by me” note. Preserve compact phone imagery on mobile, readable longform pages, and the quiet contact wording.
 
-Both Coastory previews use **Lauren’s profile**, from the existing Play Store screenshot. Do not replace it with someone else’s profile. Refresh after the app redesign alongside the store and coastory.app screenshots. Rooklet imagery is an interim development capture.
+Both Coastory previews use **Lauren’s profile**, freshly captured from Coastory 0.9.3 (18) on 12 September 2026. Keep Lauren’s profile for profile screenshots; use the sample data and verified CC0/public-domain photos for other Coastory website and store screenshots. Rooklet’s Today image is a current simulator capture with fictional example tasks. Asset provenance lives in `images/apps/README.md`.
 
 The site works as static HTML without JavaScript; only the theme preference is enhanced. Fonts come from Google Fonts as in the previous site. See README for policy-page integration and launch follow-ups.
 

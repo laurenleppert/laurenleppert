@@ -4,6 +4,7 @@
     {% if appName %}
       <a href="{{ appUrl }}">{{ appName }}</a>
       <a href="{{ supportUrl }}">Support</a>
+      {% if privacyUrl %}<a href="{{ privacyUrl }}">Privacy</a>{% endif %}
     {% else %}
       <a href="/#apps">Apps</a>
     {% endif %}

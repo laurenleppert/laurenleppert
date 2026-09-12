@@ -2,5 +2,6 @@
   "appName": "Rooklet",
   "appEmail": "lauren@velocicoder.dev",
   "appUrl": "/apps/rooklet/",
-  "supportUrl": "/apps/rooklet/support/"
+  "supportUrl": "/apps/rooklet/support/",
+  "privacyUrl": "/apps/rooklet/privacy/"
 }

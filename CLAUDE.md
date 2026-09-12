@@ -17,7 +17,7 @@ Personal site combining established QA experience, independent apps, and approac
 - Rooklet remains **Coming soon**. Source-grounded product copy and privacy facts were obtained from Claude on 11 September 2026. Current public scope includes rough week/month planning and optional habits, meals, and movement. Do not equate a visible habit card with mandatory participation, or promise lossless changes or device-exclusive storage when platform backup can apply. Do not invent release, platform, or pricing claims. All modules, including habits, remain optional to use.
 - Leppert Labs LLC branding and app operator details are deferred.
 - Personal-site contact links use **me@laurenleppert.com**. Rooklet contact, support, and policy pages use **lauren@velocicoder.dev**, supplied by `appEmail` in its directory data. Do not replace the global site email for an app-specific change.
-- Privacy and terms need actual approved policy text before pages or links are added. The shared information layout is ready; the support page is real.
+- Rooklet privacy policy and publication were explicitly approved on 12 September 2026 for `/apps/rooklet/privacy/`, using the existing app contact. The page and Rooklet footer link are present. Terms and LLC operator details still need approved content; do not invent them.
 
 ## Workflow
 

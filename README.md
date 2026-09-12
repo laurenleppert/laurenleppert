@@ -42,7 +42,7 @@ App pages use ordinary paths under the personal domain, so future apps do not ne
 - `images/apps/rooklet-preview.png` is the approved development screenshot. Replace it with a launch capture when ready.
 - `images/social-preview-v2.png` is the 1200 × 630 sharing image with the approved “I make better software…” headline; its new URL lets sharing services pick up the revision. `images/favicon.svg` is the small purple L icon. The original `logo.png` remains as a PNG fallback.
 - Rooklet product copy now reflects Claude’s source review, including rough planning, meals, and movement, while keeping every module optional. The full content and policy handoff is retained with the private design-review artifacts; legal text is not yet finalized. No platform, price, release date, or download link is asserted.
-- **Privacy and terms are not written or published by this change.** Once the real policies and operator details are approved, add Markdown pages under `src/apps/rooklet/privacy/` and `src/apps/rooklet/terms/` using `layouts/app-information.njk`, and then add their footer links. Optional `updated` front matter supplies a real revision date. The sitemap will pick up the pages automatically.
+- **Rooklet privacy policy approved for publication on 12 September 2026.** The policy is at `src/apps/rooklet/privacy/index.md`, linked in the Rooklet footer, and uses the existing `lauren@velocicoder.dev` contact. It describes local planning records, optional step access, platform backups and support feedback. Terms and LLC operator details remain deferred; do not add them without approved content.
 
 ## Verification and publishing
 

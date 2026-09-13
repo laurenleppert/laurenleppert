@@ -3,5 +3,10 @@
   "appEmail": "lauren@velocicoder.dev",
   "appUrl": "/apps/rooklet/",
   "supportUrl": "/apps/rooklet/support/",
-  "privacyUrl": "/apps/rooklet/privacy/"
+  "privacyUrl": "/apps/rooklet/privacy/",
+  "androidBeta": {
+    "groupUrl": "https://groups.google.com/g/rooklet-beta",
+    "joinUrl": "https://play.google.com/apps/testing/com.velocicoder.rooklet",
+    "storeUrl": "https://play.google.com/store/apps/details?id=com.velocicoder.rooklet"
+  }
 }

@@ -17,7 +17,7 @@ The development server uses port 8080 by default. To use another port, run `npm 
 | Location | Purpose |
 | --- | --- |
 | `src/index.njk` | Homepage: introduction, capabilities, apps, experience, personal paragraph, contact |
-| `src/apps/rooklet/index.njk` | Rooklet overview, currently coming soon |
+| `src/apps/rooklet/index.njk` | Rooklet overview and Android beta joining steps; iOS beta awaiting review |
 | `src/apps/rooklet/support/index.md` | Rooklet support and feedback contact |
 | `src/apps/rooklet/rooklet.json` | App identity and URLs inherited by its pages |
 | `src/_includes/layouts/base.njk` | Shared HTML, navigation, footer, fonts, canonical and sharing metadata |
@@ -41,7 +41,7 @@ App pages use ordinary paths under the personal domain, so future apps do not ne
 - `images/apps/coastory-profile.png` is Lauren’s existing Play Store profile screenshot, reused with its original pixels. Refresh it after the Coastory redesign along with the store and coastory.app imagery. Both homepage placements use this one file.
 - `images/apps/rooklet-preview.png` is the approved development screenshot. Replace it with a launch capture when ready.
 - `images/social-preview-v2.png` is the 1200 × 630 sharing image with the approved “I make better software…” headline; its new URL lets sharing services pick up the revision. `images/favicon.svg` is the small purple L icon. The original `logo.png` remains as a PNG fallback.
-- Rooklet product copy now reflects Claude’s source review, including rough planning, meals, and movement, while keeping every module optional. The full content and policy handoff is retained with the private design-review artifacts; legal text is not yet finalized. No platform, price, release date, or download link is asserted.
+- Rooklet product copy reflects Claude’s source review, including rough planning, meals, and movement, while keeping every module optional. Android beta links were approved for publication on 13 September 2026 and are stored in `androidBeta` in `src/apps/rooklet/rooklet.json`. The joining section explains Google Group membership, beta enrollment, and installation in that order. iOS beta is awaiting review; its TestFlight button stays unpublished until availability is confirmed. No pricing or release date is asserted.
 - **Rooklet privacy policy approved for publication on 12 September 2026.** The policy is at `src/apps/rooklet/privacy/index.md`, linked in the Rooklet footer, and uses the existing `lauren@velocicoder.dev` contact. It describes local planning records, optional step access, platform backups and support feedback. Terms and LLC operator details remain deferred; do not add them without approved content.
 
 ## Verification and publishing

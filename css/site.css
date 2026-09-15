@@ -258,6 +258,10 @@
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:24px;
 }
+.site-shell .ll-app-grid>article {
+  display:flex;
+  flex-direction:column;
+}
 .site-shell .ll-app-cover {
   min-height:235px;
   border-radius:19px;
@@ -302,6 +306,9 @@
 }
 .site-shell .ll-app-desc {
   padding-top:17px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
 }
 .site-shell .ll-app-heading {
   display:flex;
@@ -333,7 +340,8 @@
   margin-top:13px;
 }
 .site-shell .ll-app-desc .ll-actions {
-  margin-top:9px;
+  margin-top:auto;
+  padding-top:16px;
 }
 .site-shell .ll-experience {
   display:grid;
@@ -483,36 +491,49 @@
   color:var(--ll-muted);
   margin-top:10px;
 }
-.site-shell .ll-app-hero .ll-beta-note {
-  font-size:13px;
-  margin-top:14px;
-}
 .site-shell .ll-beta {
   border-top:1px solid var(--ll-line);
   padding-block:32px 42px;
   scroll-margin-top:24px;
 }
-.site-shell .ll-beta-steps {
+.site-shell .ll-beta-platforms {
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:36px;
-  margin:24px 0 0;
-  padding-inline-start:24px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  margin-top:24px;
+}
+.site-shell .ll-beta-platform {
+  padding:24px;
+  border:1px solid var(--ll-line);
+  border-radius:16px;
+  background:var(--ll-panel);
+  scroll-margin-top:24px;
+}
+.site-shell .ll-beta-platform h3 {
+  font-size:22px;
+}
+.site-shell .ll-beta-service {
+  color:var(--ll-muted);
+  font-size:14px;
+  margin:4px 0 18px;
+}
+.site-shell .ll-beta-steps {
+  margin:20px 0 0;
+  padding-inline-start:20px;
+  font-size:14px;
+  color:var(--ll-muted);
+}
+.site-shell .ll-beta-steps li+li {
+  margin-top:12px;
 }
 .site-shell .ll-beta-steps li::marker {
   color:var(--ll-purple);
   font-weight:700;
 }
-.site-shell .ll-beta-steps h3 {
-  font-size:18px;
-}
-.site-shell .ll-beta-steps p {
-  color:var(--ll-muted);
-  font-size:14px;
-  margin-top:10px;
-}
 .site-shell .ll-beta-steps a {
-  margin-top:12px;
+  color:var(--ll-purple);
+  text-decoration:underline;
+  text-underline-offset:3px;
 }
 @container(max-width:760px) {
   .site-shell .ll-hero {
@@ -716,7 +737,7 @@
     gap:23px;
     padding-block:27px 30px;
   }
-  .site-shell .ll-beta-steps {
+  .site-shell .ll-beta-platforms {
     grid-template-columns:minmax(0,1fr);
     gap:24px;
   }

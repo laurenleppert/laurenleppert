@@ -1,0 +1,10 @@
+{
+  "appName": "Coastory",
+  "appUrl": "https://coastory.app/",
+  "iosBeta": {
+    "joinUrl": "https://testflight.apple.com/join/esCwytSH"
+  },
+  "androidBeta": {
+    "guideUrl": "https://coastory.app/#android"
+  }
+}

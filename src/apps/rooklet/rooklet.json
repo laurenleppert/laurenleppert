@@ -4,6 +4,9 @@
   "appUrl": "/apps/rooklet/",
   "supportUrl": "/apps/rooklet/support/",
   "privacyUrl": "/apps/rooklet/privacy/",
+  "iosBeta": {
+    "joinUrl": "https://testflight.apple.com/join/76uZPDzd"
+  },
   "androidBeta": {
     "groupUrl": "https://groups.google.com/g/rooklet-beta",
     "joinUrl": "https://play.google.com/apps/testing/com.velocicoder.rooklet",

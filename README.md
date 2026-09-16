@@ -24,7 +24,7 @@ The development server uses port 8080 by default. To use another port, run `npm 
 | `src/_includes/layouts/app-information.njk` | Readable app-information layout, used by support and ready for approved policies |
 | `src/_data/site.json` | Site identity, email, LinkedIn, default sharing image |
 | `src/_data/coastory.json` | Coastory website and verified beta destinations |
-| `src/_data/rooklet.js` | Shares Rooklet directory data with the homepage so beta URLs have one source |
+| `src/_data/rooklet.js` | Exposes Rooklet directory data globally without duplicating app URLs |
 | `css/base.css`, `css/site.css` | Palette, layout, responsive styling, and focus states |
 | `js/theme-init.js`, `js/theme.js` | Early theme initialization and optional persisted preference |
 | `src/404.njk`, `src/robots.njk`, `src/sitemap.njk` | Error page and search-engine files |
@@ -43,10 +43,10 @@ App pages use ordinary paths under the personal domain, so future apps do not ne
 - `images/apps/coastory-profile-2026-09.jpg` is Lauren’s profile captured on 12 September 2026, used in both homepage placements.
 - `images/apps/rooklet-today-2026-09-15.jpg` is the fresh Rooklet 0.3.0 simulator capture with fictional data, used in all three website placements. See `images/apps/README.md` for provenance.
 - `images/social-preview-v2.png` is the 1200 × 630 sharing image with the approved “I make better software…” headline; its new URL lets sharing services pick up the revision. `images/favicon.svg` is the small purple L icon. The original `logo.png` remains as a PNG fallback.
-- Rooklet product copy reflects Claude’s source review, including rough planning, meals, and movement, while keeping every module optional. Android beta links were approved for publication on 13 September 2026 and are stored in `androidBeta` in `src/apps/rooklet/rooklet.json`. The joining section explains Google Group membership, beta enrollment, and installation in that order. The iOS TestFlight link was approved for publication and verified on 15 September 2026. The homepage links directly to TestFlight. The overview has matching iOS and Android buttons leading to side-by-side platform instructions. Both use `iosBeta.joinUrl` from the same app data; `src/_data/rooklet.js` exposes it to the homepage. No pricing or release date is asserted.
+- Rooklet product copy reflects Claude’s source review, including rough planning, meals, and movement, while keeping every module optional. Android beta links were approved for publication on 13 September 2026 and are stored in `androidBeta` in `src/apps/rooklet/rooklet.json`. The joining section explains Google Group membership, beta enrollment, and installation in that order. The iOS TestFlight link was approved for publication and verified on 15 September 2026. The overview has matching iOS and Android buttons leading to side-by-side platform instructions. The iOS invitation uses `iosBeta.joinUrl` from the app data; `src/_data/rooklet.js` also exposes that data globally. No pricing or release date is asserted.
 - **Rooklet privacy policy approved for publication on 12 September 2026.** The policy is at `src/apps/rooklet/privacy/index.md`, linked in the Rooklet footer, and uses the existing `lauren@velocicoder.dev` contact. It describes local planning records, optional step access, platform backups and support feedback. Terms and LLC operator details remain deferred; do not add them without approved content.
 
-The homepage uses the same “In beta” badge, iOS / Android buttons, and quieter “Explore” link for both apps. Keep joining instructions on each app’s page, not the homepage. Coastory’s Android button goes directly to its existing Android instructions at `https://coastory.app/#android`. Rooklet retains `#android-beta` and adds `#ios-beta`. The stylesheet URL includes a content hash so returning visitors receive current styles.
+The homepage uses the same “In beta” badge and “Explore” link for both apps. Keep beta buttons and joining instructions on each app’s page. Coastory’s beta access lives on `https://coastory.app/`. Rooklet retains `#android-beta` and adds `#ios-beta`. The stylesheet URL includes a content hash so returning visitors receive current styles.
 
 ## Verification and publishing
 
